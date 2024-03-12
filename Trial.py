@@ -1,9 +1,10 @@
-mat1 = [[1,2,3],[4,5,6],[1,8,9]]
+def fib(n):
+    if n ==1 or n == 2:
+        return 1
+    else:
+        return fib(n-1)
 
-elementMat1 = {}
+def genFib(a,b,c,n,m):
+    pass
 
-for i in range(3):
-    for j in range(3):
-        elementMat1[mat1[i][j]] = True
-
-print(elementMat1)
+print(fib(3))
