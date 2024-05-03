@@ -1,8 +1,9 @@
 class Node:
-    def __init__(self,data=None,next=None):
+    def __init__(self,data):
         self.data = data
-        self.next = next
+        self.next = None
 
+#Advanced Linked list
 class linkedList:
     def __init__(self):
         self.head = None
@@ -24,9 +25,20 @@ class linkedList:
             print(curr.data)
             curr = curr.next
 
-ob = linkedList()
+#Basic Linked List
+#creating Node
+n1 = Node(10)
+n2 = Node(20)
+n3 = Node(30)
+n4 = Node(40)
 
-ob.insert(0)
-ob.insert(1)
-ob.insert("Akshat")
-ob.printLL()
+#Linking the Nodes
+n1.next = n2
+n2.next = n3
+n3.next = n4
+
+#Printing the Linked List
+curr = n1
+while(curr):
+    print(curr.data,end="->")
+    curr = curr.next
