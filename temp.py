@@ -1,13 +1,14 @@
-day = input()
-n = int(input())
+class Graph:
+    def __init__(self,edges):
+        self.edges = edges
+        self.graph_dict = {}
+        for a,b in edges:
+            if a in self.graph_dict:
+                self.graph_dict[a].append(b)
+            else:
+                self.graph_dict[a] = [b]
+        print(self.graph_dict)
 
-# arr = ["sun"]
+paths = [(1,2),(1,3),(1,4),(1,5)]
 
-# a = n-arr[day]
-
-# z = (a//7)+1
-# print(z)
-if day=='sun':
-    print(round(n/7)+1)
-else:
-    print(round(n/7))
+g = Graph(paths)
