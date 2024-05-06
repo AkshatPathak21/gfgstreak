@@ -3,30 +3,9 @@ class Node:
         self.data = data
         self.next = None
 
-#Advanced Linked list
-class linkedList:
-    def __init__(self):
-        self.head = None
+#Basic Declaration of Linked List
 
-    def insert(self,data):
-        new_node = Node(data)
-        if self.head is None:
-            self.head = new_node
-            return self.head
-        else:
-            itr = self.head
-            while(itr.next):
-                itr = itr.next
-            itr.next = new_node
-
-    def printLL(self):
-        curr = self.head
-        while(curr):
-            print(curr.data)
-            curr = curr.next
-
-#Basic Linked List
-#creating Node
+#Creating Nodes
 n1 = Node(10)
 n2 = Node(20)
 n3 = Node(30)
@@ -37,8 +16,11 @@ n1.next = n2
 n2.next = n3
 n3.next = n4
 
-#Printing the Linked List
+#Printing the Linked List (List Traversal)
 curr = n1
 while(curr):
-    print(curr.data,end="->")
+    if curr.next is not None:
+        print(curr.data,end=" -> ")
+    else:
+        print("None")
     curr = curr.next
