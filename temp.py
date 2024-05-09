@@ -1,14 +1,41 @@
-class Graph:
-    def __init__(self,edges):
-        self.edges = edges
-        self.graph_dict = {}
-        for a,b in edges:
-            if a in self.graph_dict:
-                self.graph_dict[a].append(b)
-            else:
-                self.graph_dict[a] = [b]
-        print(self.graph_dict)
+class Node:
+    def __init__(self,data):
+        self.data = data
+        self.next = None
 
-paths = [(1,2),(1,3),(1,4),(1,5)]
+class linked():
+    def __init__(self):
+        self.head = None
+    
+    def insert(self,data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+            return self.head
+        else:
+            ptr = self.head
+            while(ptr.next):
+                ptr = ptr.next
+            ptr.next = new_node
+    
+    def insertBegin(self,data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+            return self.head
+        else:
+            ptr = self.head
+            self.head = new_node
+            self.head.next = ptr
 
-g = Graph(paths)
+    def printll(self):
+        curr = self.head
+        while(curr):
+            print(curr.data)
+            curr = curr.next
+
+ob = linked()
+
+ob.insertBegin(10)
+
+ob.printll()
